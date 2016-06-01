@@ -1,4 +1,9 @@
+#!/usr/bin/env ruby
+
 require 'fileutils'
+
+# Usage example
+# ./nilsify ~/repos/ma_my_pipeline/Data/bonn_chair/ .png 3 ~/repos/ma_my_pipeline/Data/bonn_chair/sel/
 
 # location of input files
 input_file_path = ARGV[0]
