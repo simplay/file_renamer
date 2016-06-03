@@ -1,4 +1,4 @@
-require 'pry'
+#!/usr/bin/env ruby
 
 files_to_rename_path = ARGV[0]
 association_file_path = ARGV[1]
@@ -16,11 +16,9 @@ unless association_file_path.nil?
   end
 
   fname_pairs.each do |idx, fname_path|
-    binding.pry
     ext = "." + fname_path.split(".").last
     File.rename(files_to_rename_path + fname_path, files_to_rename_path + idx.to_s + ext)
   end
-
 else
   fname_pairs = Dir["#{files_to_rename_path}*.*"]
   fname_pairs.each_with_index do |fname_path, idx|
