@@ -32,6 +32,7 @@ end
 
 # rename subselection to have a well-enumeration
 selected_files = Dir["#{output_file_path}*#{file_ext}"]
+selected_files = selected_files.sort_by { |f| f.split("/").last.split(".").first.to_i }
 selected_files.each_with_index do |filename, idx|
   file_out_path_name = "#{output_file_path}#{idx + 1}#{file_ext}"
   File.rename(filename, file_out_path_name)
